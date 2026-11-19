@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Lumen blog</title>
+  <meta name="description" content="News and guides from the Lumen team.">
+</head>
+<body>
+  <h1>Lumen blog</h1>
+  <ul id="posts"></ul>
+  <script>
+    fetch("../data/posts.json")
+      .then((response) => response.json())
+      .then((posts) => {
+        const list = document.getElementById("posts")
+        for (const post of posts) {
+          const item = document.createElement("li")
+          const link = document.createElement("a")
+          link.href = `post.html?slug=${encodeURIComponent(post.slug)}`
+          link.textContent = post.title
+          item.append(link, ` (${post.date})`)
+          list.append(item)
+        }
+      })
+  </script>
+</body>
+</html>
