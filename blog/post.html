@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Lumen blog</title>
+</head>
+<body>
+  <p><a href="./">All posts</a></p>
+  <article id="post"></article>
+  <script>
+    const slug = new URLSearchParams(location.search).get("slug")
+    fetch("../data/posts.json")
+      .then((response) => response.json())
+      .then((posts) => {
+        const post = posts.find((entry) => entry.slug === slug)
+        const article = document.getElementById("post")
+        if (!post) {
+          article.textContent = "Post not found."
+          return
+        }
+        document.title = `${post.title} · Lumen blog`
+        article.innerHTML = `<h1>${post.title}</h1><p><time datetime="${post.date}">${post.date}</time> · ${post.author}</p>${post.html}`
+      })
+  </script>
+</body>
+</html>
