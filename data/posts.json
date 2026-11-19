@@ -1,0 +1,16 @@
+[
+  {
+    "slug": "lumen-1-5",
+    "title": "Lumen 1.5 is out",
+    "date": "2026-11-10",
+    "author": "Ana Ruiz",
+    "html": "<p>Lumen 1.5 adds shared dashboards and faster exports.</p><h2>Shared dashboards</h2><p>Send any dashboard to a teammate with one link.</p>"
+  },
+  {
+    "slug": "exporting-reports",
+    "title": "How to export reports to CSV",
+    "date": "2026-10-28",
+    "author": "Leo Park",
+    "html": "<p>Open a report, choose Export, then pick CSV.</p>"
+  }
+]
